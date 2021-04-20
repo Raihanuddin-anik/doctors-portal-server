@@ -32,8 +32,8 @@ client.connect(err => {
   // })
 
   app.post('/appointmentsByDate', (req, res) => {
-    const date = req.body;
-    console.log(date.date)
+    const date = req.body.date;
+    console.log(date)
     collection.find({ date: date })
       .toArray((err, document) => {
         console.log(document)
